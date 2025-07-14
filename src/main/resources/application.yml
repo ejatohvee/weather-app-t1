@@ -1,0 +1,5 @@
+spring:
+  application:
+    kafka:
+      bootstrap-servers: kafka:9092
+    name: weather-app-t1
