@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Component
@@ -40,7 +40,7 @@ public class WeatherFileLoader {
 
                 String cityName = parts[0].trim();
                 City city = cityRepository.getOrCreate(cityName);
-                LocalDateTime date = LocalDateTime.parse(parts[1].trim());
+                LocalDate date = LocalDate.parse(parts[1].trim());
                 float temperature = Float.parseFloat(parts[2].trim());
                 WeatherState state = WeatherState.valueOf(parts[3].trim().toUpperCase());
 
